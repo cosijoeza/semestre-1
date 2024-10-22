@@ -1,0 +1,27 @@
+1.- Mi nombre es Cosijoeza Melchor Nolasco, me gusta que me digan Cosi, Soy de la Villa de Zaachila Oaxaca, se ubica a 20 min de la capital.
+
+2.-Estudié Ingeniería en Computación en la Universidad Tecnologica de la mixteca y me especialice en el area de inteligencia artificial.
+Lo que me motivó a estudiar la maestría en ciencia de datos es poder convertirme en un profesionista con las habilidades de crear
+modelos predictivos que beneficien a las empresas o a la sociedad.
+
+3.- La experiencia que tengo es haber trabajado con modelos de redes neuronales para hacer predicciones. Los proyectos consistán en realizar
+procesamiento digital de imagenes y desarrollar algoritmos geneticos. En estos teníamos que procesar grandes cantidades de información para entrenar
+los modelos de redes neuronales. Los proyectos que trabaje fue para detectar glaucoma en el ojo humano, predecir el numero o letra de una imagen,
+calculo de rutas mas cortas, clasificación y agrupación de datos.
+
+4 .- Para este curso me gustaría poder definir un proyecto propio que me guste y desarrollarlo de manera eficiente con los conocimientos adquiridos
+en las otras materias. Me gustaría tener una investigación bien desarrollada para que mi proyecto esté sustentado y figure entre los mejores.
+
+5.- El área que me ha gustado y llamado la atención son los modelos de prediccion que se desarrollan con machine learning y sistemas distribuidos.
+Me gusta la idea de como las grandes empresas manipulan datos que los mismo humanos generamos a través de los dispositivos moviles electronicos y lo están
+transformando en dinero. También me llama la atención el área de la medicina y la economía.
+
+6.- Me gusta pasar tiempo con mi familia y amigos, me gustan los deportes, juego futbol, entreno artes marciales y por temporadas voy al gimnasio.
+Me gustan mediadamente los videojuegos y me gustan mucho los componentes de las computadoras.
+(Pcs,monitores,teclados,mouses,audifonos,sillas) siempre me la paso buscando diversidad en estos articulos.
+Me gustan los documentales de crimenes, mis series favoritas son: Mr. Robot y The boys.
+
+7.- He utilizado bases de datos como Postgresql y Mysql. También he utilizado python y las librerias de Numpy, Pandas, Mnist Sklearn, Tensorflow, Opencv y Matlab.
+
+8.- Actualmente me fracture la pierna jugando futbol. No me agrada ninguna religión y soy muy curioso, pongo mucha atención en saber que piensan los demas acerca
+de la familia, el trato a las personas más vulnerables y que piensas de la vida en 10 años.
