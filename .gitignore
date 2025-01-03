@@ -1,2 +1,5 @@
 articles/
 data/
+*.mkv
+*.csv
+.env
