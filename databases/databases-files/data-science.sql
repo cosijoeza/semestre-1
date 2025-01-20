@@ -1,25 +1,91 @@
+DROP DATABASE IF EXISTS data_science;
+
+CREATE DATABASE data_science;
+
+USE data_science;
+
 CREATE TABLE institutos(
-   codigo INTEGER  NOT NULL PRIMARY KEY 
-  ,nombre VARCHAR(59) NOT NULL
+  codigo INTEGER  NOT NULL PRIMARY KEY,
+  nombre VARCHAR(59) NOT NULL,
 );
 
 CREATE TABLE carreras(
-   codigoCarrera   INTEGER  NOT NULL PRIMARY KEY 
-  ,nombre          VARCHAR(65) NOT NULL
-  ,codigoInstituto INTEGER  NOT NULL FOREIGN KEY REFERENCES institutos(codigo)
-  ,siglas          VARCHAR(5) NOT NULL
+  codigoCarrera   INTEGER  NOT NULL PRIMARY KEY,
+  nombre          VARCHAR(65) NOT NULL,
+  codigoInstituto INTEGER  NOT NULL,
+  siglas          VARCHAR(5) NOT NULL,
+  FOREIGN KEY (codigoInstituto) REFERENCES institutos(codigo)
 );
 
 CREATE TABLE profesores(
-   nombre    VARCHAR(39) NOT NULL PRIMARY KEY
-  ,correo    VARCHAR(37) NOT NULL
+   id        INTEGER NOT NULL AUTO_INCREMENT
+  ,nombre    VARCHAR(39)
+  ,correo    VARCHAR(37)
   ,password  VARCHAR(16)
-  ,nivel     INTEGER  NOT NULL
-  ,instituto INTEGER  NOT NULL FOREIGN KEY REFERENCES institutos(codigo)
-  ,grado     VARCHAR(16) NOT NULL
-  ,carrera   INTEGER FOREIGN KEY REFERENCES carreras(codigoCarrera)
-  ,tipo      INTEGER  NOT NULL
+  ,nivel     INTEGER
+  ,instituto INTEGER  NOT NULL
+  ,grado     VARCHAR(16)
+  ,carrera   INTEGER
+  ,tipo      INTEGER
+  ,PRIMARY KEY(id)
+  ,FOREIGN KEY (carrera) REFERENCES carreras(codigoCarrera)
+  ,FOREIGN KEY (instituto) REFERENCES institutos(codigo)
 );
+
+INSERT INTO institutos(codigo,nombre) VALUES
+ (002,'Instituto de computación')
+,(001,'Instituto de electrónica y mecatrónica')
+,(003,'Instituto de diseño')
+,(004,'Instituto de física y matemáticas')
+,(005,'Instituto de ciencias sociales y humanidades')
+,(008,'Instituto de agroindustrias')
+,(000,'vice-rectoria académica')
+,(100,'Posgrado')
+,(9,'Instituto de hidrología')
+,(010,'Instituto de minería')
+,(011,'Centro de Estudios de Nuevos Materiales')
+,(012,'Centro de Idiomas')
+,(013,'Instituto de Ingeniería Industrial y Automotriz')
+,(014,'Centro de Modelación Matemática, Vinculación y Consultoría');
+
+INSERT INTO carreras(codigoCarrera,nombre,codigoInstituto,siglas) VALUES
+ (0,'Ninguna',000,'NULL')
+,(02,'Ingeniería en Computación',002,'IC')
+,(04,'Ingeniería en Electrónica',001,'IE')
+,(03,'Ingeniería en Diseño',003,'ID')
+,(05,'Licenciatura en Ciencias Empresariales',005,'LCE')
+,(07,'Licenciatura en Matemáticas Aplicadas',004,'LMA')
+,(06,'Ingeniería en Alimentos',008,'IA')
+,(11,'Ingeniería Industrial',013,'II')
+,(14,'Ingeniería en Mecatrónica',001,'IM')
+,(17,'Ingeniería en Física Aplicada',004,'IFA')
+,(31,'Ingeniería Mecánica Automotriz',013,'IMA')
+,(50,'Maestría en Diseño de Modas',100,'MDMO')
+,(51,'Maestría en Diseño de Muebles',100,'MDMU')
+,(52,'Maestría en Medios Interactivos',100,'MMI')
+,(53,'Maestría en Ciencias de Materiales',100,'MCM')
+,(54,'Maestría en Modelación Matemática',100,'MMM')
+,(55,'Maestría en Robótica',100,'MR')
+,(56,'Maestría en Administración de Negocios',100,'MAN')
+,(57,'Maestría en Tecnología Avanzada de Manufactura',100,'MTAM')
+,(58,'Maestría en Tecnologías de Cómputo Aplicado',100,'MTCA')
+,(59,'Maestría en Ciencias: Productos Naturales y Alimentos',100,'MCPNA')
+,(60,'Maestría en Electrónica Opción: Sistemas Inteligentes Aplicados',100,'MESIA')
+,(61,'Doctorado en Robótica',100,'DR')
+,(62,'Doctorado en Tecnologías de Cómputo Aplicado',100,'DTCA')
+,(63,'Doctorado en Modelación Matemática',100,'DMM')
+,(64,'Doctorado en Electrónica, Opción: Sistemas Inteligentes Aplicados',100,'DESIA')
+,(90,'Licenciatura en Estudios Mexicanos',100,'LEM')
+,(91,'Maestría en Sistemas Distribuidos',100,'MSD')
+,(012,'Estudios de Nuevos Materiales',011,'ENM')
+,(322,'Centro de Idiomas',012,'CI')
+,(32,'Ingeniería Civil',003,'ICV')
+,(65,'Maestría en Inteligencia Artificial',100,'MIA')
+,(66,'Doctorado en Inteligencia Artificial',100,'DIA')
+,(67,'Doctorado en Ciencias: Productos Naturales y Alimentos',100,'DCPNA')
+,(68,'Maestría en Ingeniería de Software',100,'MIS')
+,(36,'Ingeniería Química en Procesos Sostenibles',008,'IQ')
+,(37,'Maestría en Ciencia de Datos',100,'MCD');
 
 INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Alicia Santiago Santos','alicia@mixteco.utm.mx','alis',4,004,'Dra.',07,0);
 INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Armando Alcalá Vallejo','avallejo@mixteco.utm.mx','gdfgdf',4,004,'M.M.M.',07,0);
@@ -112,11 +178,11 @@ INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo
 INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Edith Graciela González Mondragón','edith@mixteco.utm.mx','edith',4,008,'Dra.',06,0);
 INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Mirna Patricia Santiago Gómez','patsanmx@mixteco.utm.mx','mirna',4,008,'Dra.',06,0);
 INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Paula Cecilia Guadarrama Mendoza','pcgm@mixteco.utm.mx','paula',3,008,'Dra.',06,0);
-INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Vania Shuhua Robles González','vania@mixteco.utm.mx','vania',5,009,'Dr.',00,0);
+INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Vania Shuhua Robles González','vania@mixteco.utm.mx','vania',5,9,'Dr.',0,0);
 INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Alma Yadira Salazar Govea','almasalazar@mixteco.utm.mx','alma',4,008,'M. en C.',06,0);
 INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Luz Hermila Villalobos Delgado','vidluz@mixteco.utm.mx','walkers09',4,008,'Dra.',06,0);
 INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Enrique Lemus Fuentes','elf@mixteco.utm.mx','3nr1qu3',4,008,'Dr',06,0);
-INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Evaristo  Isac Velázquez Cruz','eisaac@mixteco.utm.mx','evaristo',4,-008,'M.C.',-06,0);
+INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Evaristo  Isac Velázquez Cruz','eisaac@mixteco.utm.mx','evaristo',4,008,'M.C.',06,0);
 INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Juana Ramírez Andrade','jramirez@mixteco.utm.mx','juana',4,008,'Q.F.B.',06,0);
 INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('María Gricelda Bravo Villa','gris@mixteco.utm.mx','maria',4,008,'Q.F.B.',06,0);
 INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Saúl Martínez Ramírez','saulmr@mixteco.utm.mx','saul',4,009,'Dr.',NULL,0);
@@ -197,7 +263,7 @@ INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo
 INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Carlos Alberto Peral Cisneros','carlos.peral@mixteco.utm.mx','C4rlos-p',4,003,'M.F.',03,0);
 INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Ivonne Maya Espinoza','maya@mixteco.utm.mx','ivonne',4,005,'Dra.',05,0);
 INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Itzcóatl Bolaños Gómez','itzco80@mixteco.utm.mx','itzcomac2018',3,003,'M.A.C.',03,0);
-INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Ludmila Elisa Guzmán Pantoja','ludmila@mixteco.utm.mx',NULL,4,-008,'Dra.',-06,0);
+INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Ludmila Elisa Guzmán Pantoja','ludmila@mixteco.utm.mx',NULL,4,008,'Dra.',06,0);
 INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('José Rodríguez Lázaro','jose@mixteco.utm.mx','jorola',4,003,'Dr.',03,0);
 INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('María del Rosario Barradas Martínez','rosario@mixteco.utm.mx','barradas0810',4,005,'Dra.',05,0);
 INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Eduardo Sánchez Soto','esanchez@mixteco.utm.mx','rennes@123',4,002,'Dr.',02,0);
@@ -266,57 +332,3 @@ INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo
 INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Enrique Reyes Arzola','enriquereyesarzola@mixteco.utm.mx','x',4,013,'Mtro.',11,6);
 INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Claudia Janette Urbano López','claudiaurbano@mixteco.utm.mx','x',4,005,'Mtra.',05,5);
 INSERT INTO profesores(nombre,correo,password,nivel,instituto,grado,carrera,tipo) VALUES ('Rocío Martínez González','rosmag@mixteco.utm.mx','x',4,005,'C.P.',05,5);
-
-INSERT INTO carreras(codigoCarrera,nombre,codigoInstituto,siglas) VALUES
- (02,'Ingeniería en Computación',002,'IC')
-,(04,'Ingeniería en Electrónica',001,'IE')
-,(03,'Ingeniería en Diseño',003,'ID')
-,(05,'Licenciatura en Ciencias Empresariales',005,'LCE')
-,(07,'Licenciatura en Matemáticas Aplicadas',004,'LMA')
-,(06,'Ingeniería en Alimentos',008,'IA')
-,(11,'Ingeniería Industrial',013,'II')
-,(14,'Ingeniería en Mecatrónica',001,'IM')
-,(17,'Ingeniería en Física Aplicada',004,'IFA')
-,(31,'Ingeniería Mecánica Automotriz',013,'IMA')
-,(50,'Maestría en Diseño de Modas',100,'MDMO')
-,(51,'Maestría en Diseño de Muebles',100,'MDMU')
-,(52,'Maestría en Medios Interactivos',100,'MMI')
-,(53,'Maestría en Ciencias de Materiales',100,'MCM')
-,(54,'Maestría en Modelación Matemática',100,'MMM')
-,(55,'Maestría en Robótica',100,'MR')
-,(56,'Maestría en Administración de Negocios',100,'MAN')
-,(57,'Maestría en Tecnología Avanzada de Manufactura',100,'MTAM')
-,(58,'Maestría en Tecnologías de Cómputo Aplicado',100,'MTCA')
-,(59,'Maestría en Ciencias: Productos Naturales y Alimentos',100,'MCPNA')
-,(60,'Maestría en Electrónica Opción: Sistemas Inteligentes Aplicados',100,'MESIA')
-,(61,'Doctorado en Robótica',100,'DR')
-,(62,'Doctorado en Tecnologías de Cómputo Aplicado',100,'DTCA')
-,(63,'Doctorado en Modelación Matemática',100,'DMM')
-,(64,'Doctorado en Electrónica, Opción: Sistemas Inteligentes Aplicados',100,'DESIA')
-,(90,'Licenciatura en Estudios Mexicanos',100,'LEM')
-,(91,'Maestría en Sistemas Distribuidos',100,'MSD')
-,(012,'Estudios de Nuevos Materiales',011,'ENM')
-,(032,'Centro de Idiomas',012,'CI')
-,(32,'Ingeniería Civil',003,'ICV')
-,(65,'Maestría en Inteligencia Artificial',100,'MIA')
-,(66,'Doctorado en Inteligencia Artificial',100,'DIA')
-,(67,'Doctorado en Ciencias: Productos Naturales y Alimentos',100,'DCPNA')
-,(68,'Maestría en Ingeniería de Software',100,'MIS')
-,(36,'Ingeniería Química en Procesos Sostenibles',008,'IQ')
-,(37,'Maestría en Ciencia de Datos',100,'MCD');
-
-INSERT INTO institutos(codigo,nombre) VALUES
- (002,'Instituto de computación')
-,(001,'Instituto de electrónica y mecatrónica')
-,(003,'Instituto de diseño')
-,(004,'Instituto de física y matemáticas')
-,(005,'Instituto de ciencias sociales y humanidades')
-,(008,'Instituto de agroindustrias')
-,(000,'vice-rectoria académica')
-,(100,'Posgrado')
-,(009,'Instituto de hidrología')
-,(010,'Instituto de minería')
-,(011,'Centro de Estudios de Nuevos Materiales')
-,(012,'Centro de Idiomas')
-,(013,'Instituto de Ingeniería Industrial y Automotriz')
-,(014,'Centro de Modelación Matemática, Vinculación y Consultoría');
