@@ -30,8 +30,8 @@ CREATE TABLE actividades (
     FOREIGN KEY (idProfesor) REFERENCES profesores(id)
 );
 CREATE TABLE articulos (
-    id INTEGER NOT NULL AUTO_INCREMENT,
-    numero bigint(11) NOT NULL,
+    id INTEGER NOT NULL,
+    numero bigint(11) NOT NULL AUTO_INCREMENT,
     tipoCRL text NOT NULL,
     titulo text NOT NULL,
     nombreCRL text NOT NULL,
@@ -50,10 +50,10 @@ CREATE TABLE articulos (
     ciudad text NOT NULL,
     pais text NOT NULL,
     editorial text NOT NULL,
-    PRIMARY KEY(id)
+    PRIMARY KEY(numero)
 );
 CREATE TABLE ca (
-    id INTEGER NOT NULL AUTO_INCREMENT,
+    id bigint(20) NOT NULL AUTO_INCREMENT,
     codigo text NOT NULL,
     correo text NOT NULL,
     PRIMARY KEY(id)
