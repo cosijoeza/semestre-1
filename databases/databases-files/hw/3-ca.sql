@@ -1,6 +1,6 @@
 USE data_science;
 INSERT INTO `ca` (`id`, `codigo`, `correo`)
-VALUES (1, "UTMIX-CA-K", "@mixteco.utm.mx"),
+VALUES
     (2, "UTMIX-CA-8", "@mixteco.utm.mx"),
     (3, "UTMIX-CA-0", "@mixteco.utm.mx"),
     (4, "UTMIX-CA-6", "@mixteco.utm.mx"),
