@@ -105,7 +105,8 @@ CREATE TABLE profesoryarticulo (
     numero bigint(11) NOT NULL,
     pos int(11) NOT NULL DEFAULT 1,
     validado tinyint(4) NOT NULL DEFAULT 1,
-    PRIMARY KEY(id)
+    PRIMARY KEY(id),
+    FOREIGN KEY (numero) REFERENCES articulos(numero)
 );
 CREATE TABLE profesorycomision (
     id bigint(20) NOT NULL AUTO_INCREMENT,
