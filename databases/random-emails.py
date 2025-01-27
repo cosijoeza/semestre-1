@@ -235,7 +235,7 @@ profes=["alicia@mixteco.utm.mx",
 "ulisesps@mixteco.utm.mx",
 "monicamejia@mixteco.utm.mx",
 "rebecahdz@mixteco.utm.mx",
-"profesor1empresariales@mixteco.utm.",
+"profesor1empresariales@mixteco.utm.mx",
 "mmoralesj@mixteco.utm.mx",
 "guyelmo_gs@mixteco.utm.mx",
 "pamelamqz@mixteco.utm.mx",
@@ -247,8 +247,8 @@ profes=["alicia@mixteco.utm.mx",
 
 import random
 print("USE data_science;")
-tabla = "profesorycomision"
+tabla = "profesorymateria"
 for i in range(0,100):
     mail = random.choice(profes)
-    print("UPDATE {} SET correoProfesor='{}' WHERE id = {};".format(tabla,mail,(i+1)))
-    print("UPDATE {} SET comprobante='{}.pdf' WHERE id = {};".format(tabla,mail,(i+1)))
+    print("UPDATE {} SET profesor='{}' WHERE id = {};".format(tabla,mail,(i+1)))
+    #print("UPDATE {} SET comprobante='{}.pdf' WHERE id = {};".format(tabla,mail,(i+1)))
