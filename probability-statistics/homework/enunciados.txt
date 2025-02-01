@@ -1,0 +1,47 @@
+Hola, me ayudas a contestar los siguientes ejercicios?
+Dado el enunciado que te de, necesitaré que lo resuelvas con los 10 pasos, me muestres el codigo en python y lo grafiques con el mismo codigo
+Me gustaría copiar todo el texto en visual code, puedes darmelo en codigo markdown
+
+2.- Mediante dos procesos se fabrican alambres galvanizados lisos para alambrados rurales. Los técnicos de la
+fábrica desean determinar si los dos procesos poseen diferentes efectos en la resistencia de la media de
+ruptura del alambre. Se someten varias muestras a los dos procesos dando los siguientes resultados:
+Proceso 1 = 9 4 10 7 9 10
+Proceso 2 = 14 9 13 12 13 8 10
+Suponiendo conocidas las varianzas, varianza del proceso 1 = 5.40 y varianza del proceso 2 = 5.25 y considerando alpha = 0,05. Probar la
+hipótesis de que las medias de resistencia a la ruptura son iguales.
+
+3.- Se sabe que una máquina de empacar cereales disecados vierte el cereal seco en bolsas de 20 kg., con una
+desviación estándar de 4 kg. Se llevan a cabo verificaciones constantes de los pesos netos de las bolsas para
+mantener el ajuste de la maquinaria que controla el peso. Dos muestras tomadas en dos días, presentan la
+siguiente información:
+Primer dia:  Tamaño de la muestra (n) = 30 y la media es de 18.7 kg.
+Segundo dia: Tamaño de la muestra (n) = 35 y la media es de 21.9 kg.
+
+Pruebe la hipótesis que no se verifica ningún cambio en el ajuste de la máquina entre los dos días.(alpha = 0,05)
+
+7.- De un cultivo de una variedad de guayule, se seleccionaron 27 plantas al azar. De estas 15 fueron atípicas y
+12 aberrantes. Los porcentajes de caucho para estas plantas fueron:
+
+Atípicas: 6,21- 5,70- 6,04 - 4,47 - 5,22 - 4,45 - 4,84 - 5,88 - 5,82- 6,09- 5,59 - 6,06 - 5,59 - 6,74 - 5,55.
+
+Aberrantes: 4,28 - 7,71 - 6,48 - 7,71 - 7,37 - 7,20 - 7,06 - 6,40 - 8,93 - 5,91 - 5,51 - 6,36.
+
+Probar la hipótesis que la diferencia entre las medias de las poblaciones de los porcentajes de caucho, no
+son significativas (alpha = 0,05)
+
+9.- Los siguientes son porcentajes de grava fina en suelos superficiales
+
+Buen suelo: 5,9; 3,8; 6,5; 18,3; 18,2; 16,1; 7,6;
+
+Suelo pobre: 7,6; 0,4; 1,1; 3,2; 6,5; 4,1; 4,7
+
+Probar la hipótesis de que no hay diferencia significativa entre las medias poblacionales (alpha = 0,01)
+
+10.- Se buscaron 8 pares de pollos idénticos en cuanto a peso, raza y sexo. A un lote se le suministró por 15 días
+el alimento tradicional y al otro lote una ración especial. La ganancia de peso es la que se detalla:
+
+Par: 1,2,3,4,5,6,7,8
+
+Alimento Tradicional: 1.75, 1.43, 1.72, 1.58, 1.62, 1.72, 1.75, 1.80
+
+Alimento Especial: 1.80, 1.52, 1.80, 1.59, 1.71, 1.78, 1.75, 1.81

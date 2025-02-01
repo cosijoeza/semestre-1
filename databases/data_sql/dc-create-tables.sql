@@ -159,9 +159,11 @@ CREATE TABLE profesorymateria (
 );
 CREATE TABLE profesorytesis (
     id INTEGER NOT NULL AUTO_INCREMENT,
+    idTesis bigint(20) NOT NULL,
     correo text NOT NULL,
     rol text NOT NULL,
-    PRIMARY KEY(id)
+    PRIMARY KEY(id),
+    FOREIGN KEY(idTesis) REFERENCES tesistas(id)
 );
 CREATE TABLE sni (
     id INTEGER NOT NULL AUTO_INCREMENT,

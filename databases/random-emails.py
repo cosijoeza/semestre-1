@@ -247,8 +247,8 @@ profes=["alicia@mixteco.utm.mx",
 
 import random
 print("USE data_science;")
-tabla = "profesorymateria"
+tabla = "profesorytesis"
 for i in range(0,100):
     mail = random.choice(profes)
-    print("UPDATE {} SET profesor='{}' WHERE id = {};".format(tabla,mail,(i+1)))
+    print("UPDATE {} SET correo='{}' WHERE id = {};".format(tabla,mail,(i+1)))
     #print("UPDATE {} SET comprobante='{}.pdf' WHERE id = {};".format(tabla,mail,(i+1)))
